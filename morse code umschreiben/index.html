@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Übersetzer</title>
+
+    <style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+    color: #39ff14;
+    text-shadow: 
+        0 0 5px #1aad00,
+        0 0 10px #1aac00,
+        0 0 20px #1bb400;
+    }
+
+    #morseBox {
+        margin: 30px auto;
+        padding: 20px;
+        width: 60%;
+        min-height: 50px;
+        border: 2px solid white;
+        font-size: 24px;
+        letter-spacing: 4px;
+        background-color: #000000;
+        border-radius: 20px;
+        box-shadow: 0 0 15px white;
+    }
+</style>
+
+<link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+
+<h1>Morse Blinker</h1>
+<input type="text" id="eingabe">
+<button onclick="start()">Start</button>
+
+<div id="morseBox"></div>
+
+<script src="script.js">
+    if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('Service Worker registriert'))
+    .catch(err => console.log('Service Worker Fehler:', err));
+}
+</script>
+</body>
+</html>
